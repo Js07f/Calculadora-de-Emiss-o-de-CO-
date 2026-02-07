@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Emissão de CO₂</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Calculadora de Emissão de CO₂</h1>
+            <p class="subtitle">Calcule o impacto ambiental do seu deslocamento</p>
+        </header>
+
+        <main>
+            <form id="calculatorForm" class="form">
+                <div class="form-group">
+                    <label for="routeSelect">Selecione a Rota:</label>
+                    <select id="routeSelect" required>
+                        <option value="">-- Escolha uma rota --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="distanceDisplay">Distância:</label>
+                    <div id="distanceDisplay" class="distance-display">
+                        Selecione uma rota
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="transportSelect">Escolha o Meio de Transporte:</label>
+                    <select id="transportSelect" required>
+                        <option value="">-- Escolha um transporte --</option>
+                        <option value="carro">🚗 Carro</option>
+                        <option value="onibus">🚌 Ônibus</option>
+                        <option value="aviao">✈️ Avião</option>
+                        <option value="bicicleta">🚴 Bicicleta</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-calculate">Calcular Emissão</button>
+            </form>
+
+            <div id="resultContainer" class="result-container hidden">
+                <h2>Resultado da Emissão</h2>
+                <div class="result-card">
+                    <div class="result-item">
+                        <span class="label">Rota:</span>
+                        <span id="resultRoute" class="value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Distância:</span>
+                        <span id="resultDistance" class="value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Transporte:</span>
+                        <span id="resultTransport" class="value">-</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="label">Emissão de CO₂:</span>
+                        <span id="resultEmission" class="value emission">-</span>
+                    </div>
+                </div>
+
+                <div class="comparison">
+                    <h3>Comparação com outros transportes:</h3>
+                    <div id="comparisonContainer" class="comparison-list"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Calculadora de CO₂ © 2026 | Projeto DIO</p>
+        </footer>
+    </div>
+
+    <script src="js/routes-data.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
